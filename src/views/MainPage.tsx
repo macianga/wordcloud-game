@@ -17,9 +17,9 @@ function MainPage() {
             placeholder="Enter your nickname here..."
             className="border-2 border-gray-300 p-2 rounded-xl h-14"
           />
-          <button type="submit" value="Submit"
+          <button
                   className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-500 rounded-md text-cyan-500 w-fit
-                  hover:border-cyan-700 hover:text-cyan-700 transition-all"
+                  hover:border-cyan-700 hover:text-cyan-700 transition-all font-bold"
           >PLAY
           </button>
         </div>
