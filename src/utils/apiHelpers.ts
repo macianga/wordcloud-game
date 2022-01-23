@@ -2,10 +2,10 @@ export const getLeaderboard = () => {
   return {
     sort: "desc",
     players: [
-      {name: "name1", score: 110},
-      {name: "name1", score: 98},
-      {name: "name1", score: 65},
-      {name: "name1", score: 54}]
+      {name: "John", score: 110},
+      {name: "Alice", score: 98},
+      {name: "Micky", score: 65},
+      {name: "Mark", score: 54}],
   }
 }
 
