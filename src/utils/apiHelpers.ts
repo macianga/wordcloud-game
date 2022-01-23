@@ -1,6 +1,5 @@
 export const getLeaderboard = () => {
   return {
-    sort: "desc",
     players: [
       {name: "John", score: 110},
       {name: "Alice", score: 98},
