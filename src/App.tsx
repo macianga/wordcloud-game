@@ -1,10 +1,10 @@
 import './App.css'
-import Leaderboard from "./views/Leaderboard";
+import Game from "./views/Game";
 
 function App() {
   return (
     <div className="App">
-      <Leaderboard username="john" score={100}/>
+      <Game />
     </div>
   )
 }
