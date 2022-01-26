@@ -18,7 +18,7 @@ function App() {
             <Route path="game" element={<Game setScore={setScore}/>}/>
             <Route path="leaderboard" element={<Leaderboard username={playerName} score={score}/>}/>
           </Routes>
-        </HashRouter>,
+        </HashRouter>
       </BrowserRouter>
     </div>
   )
