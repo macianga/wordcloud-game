@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 type Props = {
   username: string,
   score: number,
@@ -17,11 +19,12 @@ function Leaderboard({username, score}: Props) {
           <h1 className="text-center text-4xl mb-4 text-cyan-500">
             {score} points
           </h1>
-          <button
-                  className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-500 rounded-md text-cyan-500 w-fit
+          <Link
+            className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-500 rounded-md text-cyan-500 w-fit
                   hover:border-cyan-700 hover:text-cyan-700 transition-all text-xl font-bold"
+            to={"/"}
           >PLAY AGAIN
-          </button>
+          </Link>
         </div>
       </div>
     </div>
