@@ -6,12 +6,15 @@ import Leaderboard from "./views/Leaderboard";
 import {useReducer, useState} from "react";
 
 function App() {
+  const [playerName, setPlayerName] = useState("")
+  const [score, setScore] = useState(0);
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="game" element={<Game />} />
-        <Route path="leaderboard" element={<Leaderboard username={playerName} score={12}/>} />
+        <Route path="/" element={<MainPage playerName={playerName} setPlayerName={setPlayerName}/>} />
+        <Route path="game" element={<Game setScore={setScore}/>} />
+        <Route path="leaderboard" element={<Leaderboard username={playerName} score={score}/>} />
       </Routes>
     </div>
   )

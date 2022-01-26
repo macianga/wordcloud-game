@@ -1,7 +1,16 @@
-import {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function MainPage() {
-  const [playerName, setPlayerName] = useState("")
+type Props = {
+  playerName: any,
+  setPlayerName: any
+}
+
+function MainPage({playerName, setPlayerName}: Props) {
+  const navigateTo = useNavigate();
+
+  const startGame = () => {
+    navigateTo('/game')
+  }
 
   return (
     <div className="App">
@@ -20,6 +29,7 @@ function MainPage() {
           <button
                   className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-500 rounded-md text-cyan-500 w-fit
                   hover:border-cyan-700 hover:text-cyan-700 transition-all font-bold"
+                  onClick={startGame}
           >PLAY
           </button>
         </div>

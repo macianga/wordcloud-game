@@ -1,9 +1,14 @@
 import {getGameData} from "../utils/apiHelpers";
 import {shuffleArray} from "../utils/utils";
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
+
+type Props = {
+  setScore: any,
+}
 
 
-function Game() {
+function Game({setScore}: Props) {
   const [selectedElements, setSelectedElements] = useState<Array<String>>([]);
   const [question, setQuestion] = useState("")
   const [goodWords, setGoodWords] = useState<Array<String>>([]);
@@ -38,10 +43,11 @@ function Game() {
 
   const finishGame = () => {
     setGameFinished(true);
-    // const score = selectedElements.reduce((accumulator, selectedElement)=>{
-    //   const pointsAdded = goodWords.includes(selectedElement) ? 2 : -1;
-    //   return accumulator + pointsAdded;
-    // },0);
+    const score = selectedElements.reduce((accumulator, selectedElement)=>{
+      const pointsAdded = goodWords.includes(selectedElement) ? 2 : -1;
+      return accumulator + pointsAdded;
+    },0);
+    setScore(score);
   }
 
   const isWordSelected = (word: String) => {
@@ -94,11 +100,12 @@ function Game() {
             >FINISH GAME
             </button>
             :
-            <button
+            <Link
               className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-600 rounded-md text-cyan-600 w-fit
                   hover:border-cyan-500 hover:text-cyan-500 transition-all font-bold text-2xl"
+              to={"/leaderboard"}
             >SEE YOUR SCORE
-            </button>
+            </Link>
           }
         </div>
       </div>
