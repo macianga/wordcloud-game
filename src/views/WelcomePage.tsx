@@ -6,7 +6,7 @@ type Props = {
   setPlayerName: any
 }
 
-function MainPage({playerName, setPlayerName}: Props) {
+function WelcomePage({playerName, setPlayerName}: Props) {
   const navigateTo = useNavigate();
   const [validationError, setValidationError] = useState("")
 
@@ -56,4 +56,4 @@ function MainPage({playerName, setPlayerName}: Props) {
   )
 }
 
-export default MainPage
+export default WelcomePage
