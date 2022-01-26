@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {useState} from "react";
 
 type Props = {
   playerName: any,
@@ -7,8 +8,24 @@ type Props = {
 
 function MainPage({playerName, setPlayerName}: Props) {
   const navigateTo = useNavigate();
+  const [validationError, setValidationError] = useState("")
+
+  const validateInput = (input: string, allowNonAlphanumeric: boolean = true) => {
+    if (input.length < 3) {
+      setValidationError("Nickname can't be less then 3 characters long :(");
+      return false;
+    }
+    if (!allowNonAlphanumeric && !/^[a-z0-9]+$/i.test(input)) {
+      setValidationError("Don't try to be so funky with those characters!");
+      return false;
+    }
+    return true;
+  }
 
   const startGame = () => {
+    if (!validateInput(playerName))
+      return;
+
     navigateTo('/game')
   }
 
@@ -24,14 +41,15 @@ function MainPage({playerName, setPlayerName}: Props) {
             value={playerName}
             onChange={e => setPlayerName(e.target.value)}
             placeholder="Enter your nickname here..."
-            className="border-2 border-gray-300 p-2 rounded-xl h-14"
+            className={`border-2 ${validationError ? 'border-red-600' : 'border-gray-300'} p-2 rounded-xl h-14`}
           />
           <button
-                  className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-500 rounded-md text-cyan-500 w-fit
+            className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-500 rounded-md text-cyan-500 w-fit
                   hover:border-cyan-700 hover:text-cyan-700 transition-all font-bold"
-                  onClick={startGame}
+            onClick={startGame}
           >PLAY
           </button>
+          {validationError && <span className="text-red-600 mt-1">{validationError}</span>}
         </div>
       </div>
     </div>
