@@ -44,10 +44,16 @@ function Game({setScore}: Props) {
   const calculateScore = () =>{
     // (liczba zaznaczonych poprawnych odpowiedzi * 2) - (liczba zaznaczonych błędnych odpowiedzi +
     // liczba niezaznaczonych poprawnych odpowiedzi).
-    return selectedElements.reduce((accumulator, selectedElement) => {
+    const goodWordsTemp = [...goodWords]
+    let score = selectedElements.reduce((accumulator, selectedElement) => {
       const pointsEarned = goodWords.includes(selectedElement) ? 2 : -1;
+      if(goodWords.includes(selectedElement)){
+        goodWordsTemp.splice(goodWordsTemp.indexOf(selectedElement), 1);
+      }
       return accumulator + pointsEarned;
-    }, 0)
+    }, 0);
+    score -= goodWordsTemp.length;
+    return score;
   }
 
   const finishGame = () => {
