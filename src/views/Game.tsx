@@ -72,9 +72,10 @@ function Game() {
               displayElements.map((word, index) =>
                 (<button
                   key={index}
-                  className={`min-h-[3vh] hover:text-cyan-500 transition-all text-2xl
+                  className={`min-h-[3vh] ${!gameFinished && "hover:text-cyan-500"} transition-all text-2xl select-none
                    ${!gameFinished && (isWordSelected(word) ? 'text-cyan-600' : 'text-black')}
                    ${gameFinished && isWordSelected(word) && (isWordGood(word) ? 'text-green-500' : 'text-red-500')}
+                   ${(!word || gameFinished) && "pointer-events-none"}
                    `}
                   onClick={() => elementClicked(word)}
                 >
