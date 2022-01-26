@@ -106,7 +106,7 @@ function Game({setScore}: Props) {
             </button>
             :
             <Link
-              className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-600 rounded-md text-cyan-600 w-fit
+              className="block m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-600 rounded-md text-cyan-600 w-fit
                   hover:border-cyan-500 hover:text-cyan-500 transition-all font-bold text-2xl"
               to={"/leaderboard"}
             >SEE YOUR SCORE
