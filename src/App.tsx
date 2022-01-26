@@ -1,4 +1,3 @@
-import './App.css'
 import Game from "./views/Game";
 import { Routes, Route} from "react-router-dom";
 import WelcomePage from "./views/WelcomePage";
