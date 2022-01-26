@@ -3,7 +3,7 @@ import Game from "./views/Game";
 import { Routes, Route, Link } from "react-router-dom";
 import MainPage from "./views/MainPage";
 import Leaderboard from "./views/Leaderboard";
-import {useReducer, useState} from "react";
+import {useState} from "react";
 
 function App() {
   const [playerName, setPlayerName] = useState("")
