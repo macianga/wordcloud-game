@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
         <HashRouter basename={"/"}>
           <Routes>
             <Route path="/" element={<WelcomePage playerName={playerName} setPlayerName={setPlayerName}/>}/>
@@ -19,7 +18,6 @@ function App() {
             <Route path="leaderboard" element={<Leaderboard username={playerName} score={score}/>}/>
           </Routes>
         </HashRouter>
-      </BrowserRouter>
     </div>
   )
 }
