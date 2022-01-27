@@ -1,3 +1,6 @@
+import {onValue, ref, set} from "firebase/database";
+import {database} from "./firebase";
+
 export const getLeaderboard = () => {
   return {
     players: [
@@ -82,4 +85,20 @@ export const getGameData = () => {
   ];
   const index = Math.floor(Math.random() * questions.length);
   return questions[index];
+}
+
+export const saveScore = async (username: String, score: Number) => {
+  return await set(ref(database, 'users/' + username), {
+    username: username,
+    score: score
+  });
+}
+
+export const getAllScores = async (start:Number=0, limit:Number=10) =>{
+  const starCountRef = ref(database, 'users/');
+  let allScores = {};
+  onValue(starCountRef, (snapshot) => {
+    allScores = snapshot.val()
+  });
+  return allScores;
 }
