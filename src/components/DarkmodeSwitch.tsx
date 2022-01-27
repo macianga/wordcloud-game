@@ -17,7 +17,7 @@ function DarkmodeSwitch() {
         }}
       >
         <div
-          className={`bg-white dark:bg-darkmode-secondary w-6 h-6 rounded-full shadow-md transition 
+          className={`bg-white dark:bg-darkmode-secondary w-6 h-6 rounded-full shadow-md transition select-none
                       ${!isToggled && toggleClass}`}
         >
           <img src={lightbulbUrl} className="max-w-6 max-h-6"/>
