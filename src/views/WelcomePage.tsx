@@ -1,5 +1,6 @@
 import {useNavigate} from 'react-router-dom';
 import {useState} from "react";
+import DarkmodeSwitch from "../components/DarkmodeSwitch";
 
 type Props = {
   playerName: any,
@@ -31,6 +32,7 @@ function WelcomePage({playerName, setPlayerName}: Props) {
 
   return (
     <div className="dark:bg-darkmode-background">
+      <DarkmodeSwitch/>
       <div className="flex items-center justify-center min-h-screen pb-40">
         <div className="grid grid-cols-1">
           <h1 className="text-center font-bold text-5xl mb-4 dark:text-darkmode-secondary">
