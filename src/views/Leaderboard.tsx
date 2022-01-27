@@ -6,6 +6,21 @@ type Props = {
 }
 
 function Leaderboard({username, score}: Props) {
+  const getScoreMessage = ()=>{
+    if(score < 0){
+      return "I mean... It's fine";
+    }
+    if(score < 3){
+      return "Okay you goin somewhere 🚀";
+    }
+    if(score < 7){
+      return "Nice nice, keep going ;)";
+    }
+    if(score < 7){
+      return "How did you? Okay nice";
+    }
+  }
+
   return (
     <div className="App">
       <div className="flex items-center justify-center min-h-screen pb-40">
@@ -17,7 +32,10 @@ function Leaderboard({username, score}: Props) {
             Your score:
           </h1>
           <h1 className="text-center text-4xl mb-4 text-cyan-500">
-            {score} points
+            ✨{score} points✨
+          </h1>
+          <h1 className="text-center text-xl mb-4 text-purple-600">
+            {getScoreMessage()}
           </h1>
           <Link
             className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-600 rounded-md text-cyan-600 w-fit
