@@ -1,5 +1,6 @@
 import {isDarkModeSet, toggleDarkMode} from "../utils/utils";
 import {useState} from "react";
+import lightbulbUrl from '/src/icons/icon-flashlight.png'
 
 function DarkmodeSwitch() {
   const [isToggled, setIsToggled] = useState(!isDarkModeSet());
@@ -19,7 +20,7 @@ function DarkmodeSwitch() {
           className={`bg-white dark:bg-darkmode-secondary w-6 h-6 rounded-full shadow-md transition 
                       ${!isToggled && toggleClass}`}
         >
-          <img src="/src/icons/icon-flashlight.png" className="max-w-6 max-h-6"/>
+          <img src={lightbulbUrl} className="max-w-6 max-h-6"/>
         </div>
       </div>
     </div>
