@@ -44,8 +44,7 @@ function WelcomePage({playerName, setPlayerName}: Props) {
             className={`border-2 ${validationError ? 'border-red-600' : 'border-gray-300'} p-2 rounded-xl h-14`}
           />
           <button
-            className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-600 rounded-md text-cyan-600 w-fit
-                  hover:border-cyan-500 hover:text-cyan-500 transition-all font-bold text-3xl"
+            className="btn m-auto mt-2"
             onClick={startGame}
           >PLAY
           </button>

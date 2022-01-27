@@ -105,15 +105,13 @@ function Game({setScore}: Props) {
         <div>
           {!gameFinished ?
             <button
-              className="m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-600 rounded-md text-cyan-600 w-fit
-                  hover:border-cyan-500 hover:text-cyan-500 transition-all font-bold text-2xl"
+              className="btn m-auto mt-2"
               onClick={finishGame}
             >FINISH GAME
             </button>
             :
             <Link
-              className="block m-auto mt-2 p-2 pl-5 pr-5 border-2 border-cyan-600 rounded-md text-cyan-600 w-fit
-                  hover:border-cyan-500 hover:text-cyan-500 transition-all font-bold text-2xl"
+              className="btn block m-auto mt-2"
               to={"/leaderboard"}
             >SEE YOUR SCORE
             </Link>
