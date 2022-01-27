@@ -1,4 +1,7 @@
 import {Link} from "react-router-dom";
+import {useEffect} from "react";
+import {saveScore} from "../utils/apiHelpers";
+
 
 type Props = {
   username: string,
@@ -6,6 +9,11 @@ type Props = {
 }
 
 function Leaderboard({username, score}: Props) {
+
+  useEffect(() => {
+    saveScore(username, score);
+  }, []);
+
   const getScoreMessage = () => {
     if (score < 1) {
       return "I mean... It's fine";
