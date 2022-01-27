@@ -15,18 +15,14 @@ function Leaderboard({username, score}: Props) {
   }, []);
 
   const getScoreMessage = () => {
-    if (score < 1) {
+    if (score < 1)
       return "I mean... It's fine";
-    }
-    if (score < 3) {
+    if (score < 3)
       return "Okay you goin somewhere 🚀";
-    }
-    if (score < 5) {
+    if (score < 5)
       return "Nice nice, keep going ;)";
-    }
-    if (score < 8) {
+    if (score < 8)
       return "How did you? Okay nice";
-    }
   }
 
   return (
