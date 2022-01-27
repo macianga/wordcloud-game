@@ -16,22 +16,22 @@ export const shuffleArray = (array: Array<String>) => {
   return array;
 }
 
+export const isDarkModeSet = () => {
+  return (localStorage.theme === 'dark' || (!('theme' in localStorage)
+    && window.matchMedia('(prefers-color-scheme: dark)').matches))
+}
+
 export const applyCurrentTheme = () => {
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage)
-    && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (isDarkModeSet()) {
     document.documentElement.classList.add('dark')
   } else {
     document.documentElement.classList.remove('dark')
   }
 }
 
-export const isDarkModeSet = ()=>{
-  return localStorage.theme === 'dark';
-}
 
 export const toggleDarkMode = () => {
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage)
-    && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (isDarkModeSet()) {
     localStorage.theme = 'light'
   } else {
     localStorage.theme = 'dark'
