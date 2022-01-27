@@ -78,9 +78,9 @@ function Game({setScore}: Props) {
 
 
   return (
-    <div className="App">
+    <div className="dark:bg-darkmode-background">
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-center font-bold text-5xl mb-4">
+        <h1 className="text-center font-bold text-5xl mb-4 dark:text-darkmode-secondary">
           {question}
         </h1>
         <div className="min-w-[70vw] min-h-[70vh] border-2 border-dashed border-gray-500">
@@ -89,9 +89,9 @@ function Game({setScore}: Props) {
               displayElements.map((word, index) =>
                 (<button
                   key={index}
-                  className={`min-h-[3vh] ${!gameFinished && "hover:text-cyan-500"} transition-all text-2xl select-none
-                   ${!gameFinished && (isWordSelected(word) ? 'text-cyan-600' : 'text-black')}
-                   ${gameFinished && isWordSelected(word) && (isWordGood(word) ? 'text-green-500' : 'text-red-500')}
+                  className={`min-h-[3vh] ${!gameFinished && "hover:text-primary"} transition-all text-2xl select-none
+                   ${!gameFinished && (isWordSelected(word) ? 'text-primary-hover' : 'text-black dark:text-white')}
+                   ${gameFinished && isWordSelected(word) && (isWordGood(word) ? 'text-green-500' : 'text-danger')}
                    ${(!word || gameFinished) && "pointer-events-none"}
                    `}
                   onClick={() => elementClicked(word)}

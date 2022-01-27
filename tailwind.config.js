@@ -10,6 +10,7 @@ module.exports = {
         'primary': '#06b6d4',
         'primary-hover': '#0891b2',
         'secondary': '#9333ea',
+        'darkmode-secondary': '#a855f7',
         'danger': '#dc2626'
       },
     },
