@@ -7,16 +7,16 @@ type Props = {
 
 function Leaderboard({username, score}: Props) {
   const getScoreMessage = ()=>{
-    if(score < 0){
+    if(score < 1){
       return "I mean... It's fine";
     }
     if(score < 3){
       return "Okay you goin somewhere 🚀";
     }
-    if(score < 7){
+    if(score < 5){
       return "Nice nice, keep going ;)";
     }
-    if(score < 7){
+    if(score < 8){
       return "How did you? Okay nice";
     }
   }
