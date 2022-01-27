@@ -28,7 +28,7 @@ function Leaderboard({username, score}: UserGameType) {
       return "I mean... It's fine";
     if (score < 3)
       return "Okay you goin somewhere 🚀";
-    if (score < 6)
+    if (score < 8)
       return "Nice nice, keep going ;)";
 
     return "How did you...? Okay nice";
