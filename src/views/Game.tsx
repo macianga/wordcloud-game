@@ -79,7 +79,7 @@ function Game({setScore}: Props) {
 
 
   return (
-    <div className="dark:bg-darkmode-background">
+    <div className="dark:bg-darkmode-background darkmode-transition">
       <DarkmodeSwitch/>
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h1 className="text-center font-bold text-5xl mb-4 dark:text-darkmode-secondary">

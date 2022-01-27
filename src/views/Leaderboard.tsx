@@ -36,7 +36,7 @@ function Leaderboard({username, score}: UserGameType) {
   }
 
   return (
-    <div className="dark:bg-darkmode-background dark:text-white">
+    <div className="dark:bg-darkmode-background dark:text-white darkmode-transition">
       <DarkmodeSwitch/>
       <div className="flex items-center justify-center min-h-screen pb-40">
         <div className="grid grid-cols-1">

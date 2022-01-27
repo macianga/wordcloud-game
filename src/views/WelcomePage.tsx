@@ -31,7 +31,7 @@ function WelcomePage({playerName, setPlayerName}: Props) {
   }
 
   return (
-    <div className="dark:bg-darkmode-background">
+    <div className="dark:bg-darkmode-background darkmode-transition">
       <DarkmodeSwitch/>
       <div className="flex items-center justify-center min-h-screen pb-40">
         <div className="grid grid-cols-1">
