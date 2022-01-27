@@ -1,17 +1,26 @@
 import {Link} from "react-router-dom";
-import {useEffect} from "react";
-import {saveScore} from "../utils/apiHelpers";
+import {useEffect, useState} from "react";
+import {getAllScores, saveScore} from "../utils/apiHelpers";
 
 
-type Props = {
+type UserGameType = {
   username: string,
   score: number,
 }
 
-function Leaderboard({username, score}: Props) {
 
+function Leaderboard({username, score}: UserGameType) {
+  const [scores, setScores] = useState<Array<UserGameType>>([])
   useEffect(() => {
     saveScore(username, score);
+
+    getAllScores((data: any) => {
+      const dictData = data.val();
+      const valuesArray: Array<UserGameType> = Object.values(dictData);
+
+      valuesArray.sort((el1, el2) => el2.score - el1.score)
+      setScores(valuesArray);
+    })
   }, []);
 
   const getScoreMessage = () => {
@@ -47,6 +56,25 @@ function Leaderboard({username, score}: Props) {
             to={"/"}
           >PLAY AGAIN
           </Link>
+
+          <table className="table-auto mt-10">
+            <thead>
+            <tr className="font-bold text-3xl">
+              <th className="text-left">Player</th>
+              <th className="text-right">Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            {
+              scores.map((game: UserGameType, index) => (
+                <tr key={index} className={`text-xl border-t-[1px] border-purple-600`}>
+                  <td>{game.username}</td>
+                  <td className="text-right ">{game.score}</td>
+                </tr>
+              ))
+            }
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

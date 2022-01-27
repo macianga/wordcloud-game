@@ -1,15 +1,6 @@
 import {onValue, ref, set} from "firebase/database";
 import {database} from "./firebase";
 
-export const getLeaderboard = () => {
-  return {
-    players: [
-      {name: "John", score: 110},
-      {name: "Alice", score: 98},
-      {name: "Micky", score: 65},
-      {name: "Mark", score: 54}],
-  }
-}
 
 export const getGameData = () => {
   // mock api response by selecting random question
@@ -88,18 +79,15 @@ export const getGameData = () => {
 }
 
 export const saveScore = async (username: String, score: Number) => {
-  if(!username) return false;
+  if (!username) return false;
   return await set(ref(database, 'users/' + username), {
     username: username,
     score: score
   });
 }
 
-export const getAllScores = async (start:Number=0, limit:Number=10) =>{
-  const starCountRef = ref(database, 'users/');
-  let allScores = {};
-  onValue(starCountRef, (snapshot) => {
-    allScores = snapshot.val()
-  });
-  return allScores;
+
+export const getAllScores = async (callback: any) => {
+  const dbUsersRef = ref(database, 'users');
+  onValue(dbUsersRef, callback);
 }
