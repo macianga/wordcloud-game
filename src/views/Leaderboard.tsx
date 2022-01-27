@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getAllScores, saveScore} from "../utils/apiHelpers";
+import DarkmodeSwitch from "../components/DarkmodeSwitch";
 
 
 type UserGameType = {
@@ -36,6 +37,7 @@ function Leaderboard({username, score}: UserGameType) {
 
   return (
     <div className="dark:bg-darkmode-background dark:text-white">
+      <DarkmodeSwitch/>
       <div className="flex items-center justify-center min-h-screen pb-40">
         <div className="grid grid-cols-1">
           <span className="text-center font-bold text-5xl mb-4">

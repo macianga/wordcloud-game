@@ -2,6 +2,7 @@ import {getGameData} from "../utils/apiHelpers";
 import {shuffleArray} from "../utils/utils";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import DarkmodeSwitch from "../components/DarkmodeSwitch";
 
 type Props = {
   setScore: any,
@@ -79,6 +80,7 @@ function Game({setScore}: Props) {
 
   return (
     <div className="dark:bg-darkmode-background">
+      <DarkmodeSwitch/>
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h1 className="text-center font-bold text-5xl mb-4 dark:text-darkmode-secondary">
           {question}
