@@ -23,15 +23,15 @@ function Leaderboard({username, score}: UserGameType) {
     })
   }, []);
 
-  const getScoreMessage = () => {
+  const getScoreMessage = (): string => {
     if (score < 1)
       return "I mean... It's fine";
     if (score < 3)
       return "Okay you goin somewhere 🚀";
-    if (score < 5)
+    if (score < 6)
       return "Nice nice, keep going ;)";
-    if (score < 8)
-      return "How did you? Okay nice";
+
+    return "How did you...? Okay nice";
   }
 
   return (
