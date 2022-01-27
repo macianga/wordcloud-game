@@ -25,6 +25,10 @@ export const applyCurrentTheme = () => {
   }
 }
 
+export const isDarkModeSet = ()=>{
+  return localStorage.theme === 'dark';
+}
+
 export const toggleDarkMode = () => {
   if (localStorage.theme === 'dark' || (!('theme' in localStorage)
     && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
