@@ -44,10 +44,10 @@ function Leaderboard({username, score}: UserGameType) {
           <span className="text-center text-4xl mb-4">
             Your score:
           </span>
-          <span className="text-center text-4xl mb-4 text-cyan-500">
+          <span className="text-center text-4xl mb-4 text-primary">
             ✨{score} points✨
           </span>
-          <span className="text-center text-xl mb-4 text-purple-600">
+          <span className="text-center text-xl mb-4 text-secondary">
             {getScoreMessage()}
           </span>
           <Link
@@ -68,7 +68,7 @@ function Leaderboard({username, score}: UserGameType) {
                   <tbody>
                   {
                     scores.map((game: UserGameType, index) => (
-                      <tr key={index} className={`text-xl border-t-[1px] border-purple-600`}>
+                      <tr key={index} className={`text-xl border-t-[1px] border-secondary`}>
                         <td>{game.username}</td>
                         <td className="text-right ">{game.score}</td>
                       </tr>
@@ -78,7 +78,7 @@ function Leaderboard({username, score}: UserGameType) {
                 </table>
               )
               :
-              (<div className=" mt-16 w-20 h-20 border-t-4 border-b-4 border-green-900 rounded-full animate-spin"/>)
+              (<div className=" mt-16 w-20 h-20 border-t-4 border-b-4 border-secondary rounded-full animate-spin"/>)
             }
           </div>
 

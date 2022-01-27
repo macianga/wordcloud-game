@@ -30,7 +30,7 @@ function WelcomePage({playerName, setPlayerName}: Props) {
   }
 
   return (
-    <div className="App">
+    <div className="dark:bg-darkmode-background">
       <div className="flex items-center justify-center min-h-screen pb-40">
         <div className="grid grid-cols-1">
           <h1 className="text-center font-bold text-5xl mb-4">
@@ -41,14 +41,14 @@ function WelcomePage({playerName, setPlayerName}: Props) {
             value={playerName}
             onChange={e => setPlayerName(e.target.value)}
             placeholder="Enter your nickname here..."
-            className={`border-2 ${validationError ? 'border-red-600' : 'border-gray-300'} p-2 rounded-xl h-14`}
+            className={`border-2 ${validationError ? 'border-danger' : 'border-gray-300'} p-2 rounded-xl h-14`}
           />
           <button
             className="btn m-auto mt-2"
             onClick={startGame}
           >PLAY
           </button>
-          {validationError && <span className="text-red-600 mt-1 text-center">{validationError}</span>}
+          {validationError && <span className="text-danger mt-1 text-center">{validationError}</span>}
         </div>
       </div>
     </div>
