@@ -56,24 +56,30 @@ function Leaderboard({username, score}: UserGameType) {
           >PLAY AGAIN
           </Link>
           <div className="flex flex-row justify-center">
-            <table className="table-auto mt-10 max-w-2xl">
-              <thead>
-              <tr className="font-bold text-3xl">
-                <th className="text-left">Player</th>
-                <th className="text-right">Score</th>
-              </tr>
-              </thead>
-              <tbody>
-              {
-                scores.map((game: UserGameType, index) => (
-                  <tr key={index} className={`text-xl border-t-[1px] border-purple-600`}>
-                    <td>{game.username}</td>
-                    <td className="text-right ">{game.score}</td>
+            {scores.length ?
+              (
+                <table className="table-auto mt-10 max-w-2xl">
+                  <thead>
+                  <tr className="font-bold text-3xl">
+                    <th className="text-left">Player</th>
+                    <th className="text-right">Score</th>
                   </tr>
-                ))
-              }
-              </tbody>
-            </table>
+                  </thead>
+                  <tbody>
+                  {
+                    scores.map((game: UserGameType, index) => (
+                      <tr key={index} className={`text-xl border-t-[1px] border-purple-600`}>
+                        <td>{game.username}</td>
+                        <td className="text-right ">{game.score}</td>
+                      </tr>
+                    ))
+                  }
+                  </tbody>
+                </table>
+              )
+              :
+              (<div className=" mt-16 w-20 h-20 border-t-4 border-b-4 border-green-900 rounded-full animate-spin"/>)
+            }
           </div>
 
         </div>
