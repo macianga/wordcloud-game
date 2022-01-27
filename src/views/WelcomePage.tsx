@@ -49,7 +49,7 @@ function WelcomePage({playerName, setPlayerName}: Props) {
             onClick={startGame}
           >PLAY
           </button>
-          {validationError && <span className="text-red-600 mt-1">{validationError}</span>}
+          {validationError && <span className="text-red-600 mt-1 text-center">{validationError}</span>}
         </div>
       </div>
     </div>
