@@ -89,10 +89,11 @@ function Game({setScore}: Props) {
               displayElements.map((word, index) =>
                 (<button
                   key={index}
-                  className={`min-h-[3vh] ${!gameFinished && "hover:text-primary"} transition-all text-2xl select-none
+                  className={`min-h-[3vh] transition-all text-2xl select-none
                    ${!gameFinished && (isWordSelected(word) ? 'text-primary-hover' : 'text-black dark:text-white')}
                    ${gameFinished && isWordSelected(word) && (isWordGood(word) ? 'text-green-500' : 'text-danger')}
                    ${(!word || gameFinished) && "pointer-events-none"}
+                   ${!gameFinished && "hover:text-primary dark:hover:text-primary"}
                    `}
                   onClick={() => elementClicked(word)}
                 >
