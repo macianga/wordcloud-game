@@ -88,6 +88,7 @@ export const getGameData = () => {
 }
 
 export const saveScore = async (username: String, score: Number) => {
+  if(!username) return false;
   return await set(ref(database, 'users/' + username), {
     username: username,
     score: score
